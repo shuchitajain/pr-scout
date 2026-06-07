@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "file": "lib/services/csv_export_service.dart",
+    "line": 27,
+    "diff_position": 14,
+    "side": "RIGHT",
+    "body": "This call fetches the full dataset regardless of the date range selected in the dashboard (AC 5). `DateRangeFilter` is available in `DashboardState` but is never passed here. Should `export()` accept a filter parameter, or read from the state provider directly?",
+    "confidence": "high",
+    "finding_ref": "Finding 1"
+  },
+  {
+    "id": 2,
+    "file": "lib/services/csv_export_service.dart",
+    "line": 51,
+    "diff_position": 38,
+    "side": "RIGHT",
+    "body": "The web export path skips the loading state. `isExporting` is never set to `true` here, so the button stays enabled and the UI gives no feedback during serialisation. Mobile sets loading state at line 44 — should the web path share the same wrapper?",
+    "confidence": "medium",
+    "finding_ref": "Finding 2"
+  }
+]

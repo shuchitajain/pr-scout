@@ -1,0 +1,5 @@
+# pr-scout runtime outputs
+.ai/pr-scout/outputs/
+
+# internal decisions log — not for public history
+decisions.md

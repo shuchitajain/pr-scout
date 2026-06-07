@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ "${1:-}" == "init" ]]; then
+  shift || true
+  exec "${SCRIPT_DIR}/pr-scout-init.sh" "$@"
+fi
+
+cat <<'EOF'
+Usage:
+  ./scripts/pr-scout init [target-directory]
+
+Examples:
+  ./scripts/pr-scout init .
+  ./scripts/pr-scout init ../my-repo
+EOF
