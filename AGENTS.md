@@ -35,7 +35,6 @@ scripts/
 Every run should produce:
 - briefing.md
 - review-comments.json (when findings have diff-locatable anchors)
-- normalized-inputs.json
 - manual-todo.md only when input fetch or parsing gaps exist
 
 ## Decision tracking

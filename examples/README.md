@@ -9,5 +9,5 @@ outputs/DASH-77-pr-19/
 └── manual-todo.md         — findings that couldn't be anchored to a diff line, access failures
 ```
 
-These files mirror the full output contract under `.ai/pr-scout/outputs/reviews/<run-id>/`.
+These files mirror the full output contract under `.ai/pr-scout/outputs/<run-id>/`.
 Nothing is posted to the PR until you review and confirm the comment list in chat.

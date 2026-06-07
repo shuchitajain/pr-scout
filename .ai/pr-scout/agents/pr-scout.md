@@ -54,7 +54,7 @@ Optional:
 
 All output paths are relative to the **repository root** (the directory containing `.ai/pr-scout/`). Never write to absolute paths, temp directories, or editor cache locations.
 
-.ai/pr-scout/outputs/reviews/<run-id>/
+.ai/pr-scout/outputs/<run-id>/
 
 - briefing.md
 - review-comments.json (always, when findings have diff-locatable anchors)
