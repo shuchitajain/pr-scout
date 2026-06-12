@@ -72,7 +72,7 @@ What init does:
 - copies `agents/`, `prompts/`, and `outputs/` from pr-scout into `.ai/pr-scout/` in the target repo, without overwriting existing files
 - creates or updates `AGENTS.md` in the repo root with a short pr-scout usage paragraph
 - creates or updates `CLAUDE.md` when a `CLAUDE.md` file is already present
-- updates `.claude/rules/pr-scout.md` when a `.claude/rules/` directory is already present
+- installs `.claude/skills/` wrappers when a `.claude/` directory is detected (or when `CLAUDE.md` is present)
 - installs `.github/agents/` wrappers when a `.github/` directory is detected (GitHub Copilot mode-dropdown agents)
 - installs `.cursor/skills/` wrappers when a `.cursor/` directory is detected
 - adds `.ai/pr-scout/` to `.gitignore`
@@ -85,12 +85,13 @@ Prompt behavior across IDEs:
 - canonical agents always live in `.ai/pr-scout/agents/`
 - `.github/agents/` files are GitHub Copilot mode-dropdown wrappers (registered in the Copilot Chat agent selector); must use the `.agent.md` extension
 - `.cursor/skills/` files are Cursor skill wrappers (invoked with `/pr-scout`)
+- `.claude/skills/` files are Claude skill wrappers (invoked with `/pr-scout`)
 - IDE wrapper files delegate to the canonical agents; they are not the source of truth
 
 ## Existing AI Systems Supported
 
 - **All repos:** `AGENTS.md` is created (or appended to) with a pr-scout usage paragraph.
-- **Claude Code:** `CLAUDE.md` is updated when already present. `.claude/rules/pr-scout.md` is updated when `.claude/rules/` exists.
+- **Claude Code:** `CLAUDE.md` is updated when already present. `.claude/skills/` wrappers are installed when a `.claude/` directory is detected, or when `CLAUDE.md` is present.
 - **GitHub Copilot:** `.github/agents/` wrappers are installed when a `.github/` directory is detected.
 - **Cursor:** `.cursor/skills/` wrappers are installed when a `.cursor/` directory is detected.
 

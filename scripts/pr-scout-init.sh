@@ -313,14 +313,14 @@ if [[ -d "${TARGET_ROOT}/.cursor" ]]; then
   copy_tree_additive "${ASSET_ROOT}/templates/cursor/skills/pr-scout" "${TARGET_ROOT}/.cursor/skills/pr-scout"
 fi
 
+if [[ -d "${TARGET_ROOT}/.claude" || -f "${TARGET_ROOT}/CLAUDE.md" ]]; then
+  copy_tree_additive "${ASSET_ROOT}/templates/claude/skills/pr-scout" "${TARGET_ROOT}/.claude/skills/pr-scout"
+fi
+
 ensure_pr_scout_paragraph "${TARGET_ROOT}/AGENTS.md"
 
 if [[ -f "${TARGET_ROOT}/CLAUDE.md" ]]; then
   ensure_pr_scout_paragraph "${TARGET_ROOT}/CLAUDE.md"
-fi
-
-if [[ -d "${TARGET_ROOT}/.claude/rules" ]]; then
-  ensure_pr_scout_paragraph "${TARGET_ROOT}/.claude/rules/pr-scout.md"
 fi
 
 ensure_gitignore_block
